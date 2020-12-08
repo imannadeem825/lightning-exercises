@@ -71,57 +71,90 @@
 // by wrapping each in an <h3> tag. Append them to the DOM.
 // Achieve the same result using .map()
 
-let family = [
-  {
-    name: "Fred Jones",
-    age: 49,
-    title: "parent"
-  },
-  {
-    name: "Pat Jones",
-    age: 50,
-    title: "parent"
-  },
-  {
-    name: "Bubba Jones",
-    age: 20,
-    title: "adult child"
-  },
-  {
-    name: "Kelly Jones",
-    age: 12,
-    title: "dependent child"
-  },
-  {
-    name: "Bartleby",
-    age: 3,
-    title: "pet"
-  }
-]
+// let family = [
+//   {
+//     name: "Fred Jones",
+//     age: 49,
+//     title: "parent"
+//   },
+//   {
+//     name: "Pat Jones",
+//     age: 50,
+//     title: "parent"
+//   },
+//   {
+//     name: "Bubba Jones",
+//     age: 20,
+//     title: "adult child"
+//   },
+//   {
+//     name: "Kelly Jones",
+//     age: 12,
+//     title: "dependent child"
+//   },
+//   {
+//     name: "Bartleby",
+//     age: 3,
+//     title: "pet"
+//   }
+// ]
 
 
-const familyEl = document.querySelector("#family")
-const familyNames = []
-for (let i=0; i < family.length; i++) {
-  familyNames.push(`<h3>${family[i].name}</h3>`)
-}
-familyEl.innerHTML += familyNames.join("")
+// const familyEl = document.querySelector("#family")
+// const familyNames = []
+// for (let i=0; i < family.length; i++) {
+//   familyNames.push(`<h3>${family[i].name}</h3>`)
+// }
+// familyEl.innerHTML += familyNames.join("")
 
 
-// .map solution: shorthand of above
-familyEl.innerHTML = family.map( (famMember) => `<h3>${famMember.name}</h3>`).join("")
+// // .map solution: shorthand of above
+// familyEl.innerHTML = family.map( (famMember) => `<h3>${famMember.name}</h3>`).join("")
 
-// extra: filter method
-const adults = family.filter( (familyMember) => {
-  if (familyMember.age >= 18) {
-    return true
-  }
-})
-console.log("grownups?", adults)
+// // extra: filter method
+// const adults = family.filter( (familyMember) => {
+//   if (familyMember.age >= 18) {
+//     return true
+//   }
+// })
+// console.log("grownups?", adults)
 
-// shorthand for filter
-const adults = family.filter ( (familyMember) => familyMember.age >= 18)
-console.log("grownups?", adults)
+// // shorthand for filter
+// const adults = family.filter ( (familyMember) => familyMember.age >= 18)
+// console.log("grownups?", adults)
 
-// find method--returns one object from the family array, the first time the condition is met, and then stops
-const parent = family.find( (familyMember) => familyMember.title === "parent")
+// // find method--returns one object from the family array, the first time the condition is met, and then stops
+// const parent = family.find( (familyMember) => familyMember.title === "parent")
+
+
+
+// Exercise 5
+// An object's properties can be accessed by dot notation or bracket notation
+
+// Using the object above, console log "Our company's lawyer is Jeff Winger"
+// using dot notation to access 'name'
+// Console log "Jeff was hired on 09/22/2010" using bracket notation.
+// Add a new key, vacation_days, and its value, 20, to employee.
+// Use either dot or bracket notation. Does it matter which one you use?
+// Try both to find out.
+// let eom = "employee_of_the_month";
+// Use the variable above to add a new property to employee.
+// Set its value to false. Should you use dot or bracket notation?
+
+let employee = {
+  name: "Jeff Winger",
+  age: 37,
+  department: "legal",
+  hire_date: "09/22/2010"
+};
+
+
+console.log(`Our company's lawyer is ${employee.name}`)
+console.log(`Jeff waws hired on ${employee["hire_date"]}`)
+
+employee["vacation_days"] = 20 
+console.log(employee)
+
+let eom = "employee_of_the_month"
+employee[eom] = false
+console.log(employee)
